@@ -38,6 +38,11 @@ class usuarios {
         const response = await database.query('SELECT * FROM usuario')
         return response.rows
     }
+
+    async findUserByID(id){
+        const response = await database.query("SELECT * FROM usuario WHERE id_usuario = $1", [id])
+        return response.rows[0]
+    }
 }
 
 // Exporta uma instância singleton, para que o controller use sempre a mesma.

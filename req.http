@@ -2,3 +2,8 @@
 
 ###
 GET {{url}}/usuarios
+
+
+###
+
+GET {{url}}/usuarios/1

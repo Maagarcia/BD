@@ -15,4 +15,8 @@ export async function routes(app) {
         console.log('requisição saindo do routes')
         const usuarios = await controller.listar(res);
     });
+
+    app.get('/usuarios/:id', async(req,res )=>{
+        const usuario = await controller.findUserByID(req, res)
+    })
 }

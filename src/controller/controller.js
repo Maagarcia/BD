@@ -23,6 +23,12 @@ class controller {
     const usuarios = await this.model.findAll();
     params.send(usuarios)
   }
+
+  async findUserByID(req,res) {
+    const id = req.params.id
+    const usuario = await this.model.findUserByID(id)
+    res.send(usuario)
+  }
 }
 
 // Exporta uma instância singleton do controller.
